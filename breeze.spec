@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 Name: breeze
-Version: 5.0.1
+Version: 5.0.95
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/plasma/%{version}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
@@ -17,6 +17,7 @@ BuildRequires: cmake(Gettext)
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KDecorations)
 BuildRequires: cmake(KF5ConfigWidgets)
+BuildRequires: cmake(KF5FrameworkIntegration)
 BuildRequires: cmake(Qt5)
 BuildRequires: ninja
 
@@ -32,8 +33,9 @@ ninja -C build
 
 %install
 DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
+%find_lang breeze_style_config
 
-%files
+%files -f breeze_style_config.lang
 %{_libdir}/kconf_update_bin/kde4breeze
 %{_libdir}/qml/QtQuick/Controls/Styles/Breeze
 %{_datadir}/icons/breeze
@@ -41,6 +43,9 @@ DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
 %{_datadir}/kwin/decorations/kwin4_decoration_qml_breeze
 %{_datadir}/wallpapers
 %{_datadir}/kservices5/kwin/kwin4_decoration_qml_breeze.desktop
+%{_datadir}/kstyle/themes/breeze.themerc
 %{_datadir}/kconf_update/kde4breeze.upd
 %{_datadir}/QtCurve
 %{_datadir}/color-schemes/Breeze.colors
+%{_libdir}/plugins/kstyle_breeze_config.so
+%{_libdir}/plugins/styles/breeze.so
