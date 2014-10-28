@@ -1,9 +1,10 @@
 %define debug_package %{nil}
+%define major %(echo %{version} |cut -d. -f1-3)
 
 Name: breeze
-Version: 5.0.95
+Version: 5.1.0.1
 Release: 1
-Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/plasma/%{version}/%{name}-%{version}.tar.xz
+Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
 URL: http://kde.org/
 License: GPL
@@ -40,6 +41,7 @@ DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
 %{_libdir}/qml/QtQuick/Controls/Styles/Breeze
 %{_datadir}/icons/breeze
 %{_datadir}/icons/breeze_cursors
+%{_datadir}/icons/breeze-dark
 %{_datadir}/kwin/decorations/kwin4_decoration_qml_breeze
 %{_datadir}/wallpapers
 %{_datadir}/kservices5/kwin/kwin4_decoration_qml_breeze.desktop
@@ -47,5 +49,6 @@ DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
 %{_datadir}/kconf_update/kde4breeze.upd
 %{_datadir}/QtCurve
 %{_datadir}/color-schemes/Breeze.colors
+%{_datadir}/color-schemes/BreezeDark.colors
 %{_libdir}/plugins/kstyle_breeze_config.so
 %{_libdir}/plugins/styles/breeze.so
