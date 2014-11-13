@@ -1,10 +1,11 @@
 %define debug_package %{nil}
 %define major %(echo %{version} |cut -d. -f1-3)
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: breeze
-Version: 5.1.0.1
+Version: 5.1.1
 Release: 1
-Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/plasma/%{major}/%{name}-%{version}.tar.xz
+Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
 URL: http://kde.org/
 License: GPL
