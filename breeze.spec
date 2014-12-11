@@ -28,18 +28,19 @@ The KDE 5 Breeze style
 
 %prep
 %setup -q
-%cmake -G Ninja
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
 ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
+DESTDIR="%{buildroot}" ninja -C build install
 %find_lang breeze_style_config
 
 %files -f breeze_style_config.lang
 %{_libdir}/kconf_update_bin/kde4breeze
-%{_libdir}/qml/QtQuick/Controls/Styles/Breeze
+%{_libdir}/qt5/qml/QtQuick/Controls/Styles/Breeze
 %{_datadir}/icons/breeze
 %{_datadir}/icons/breeze_cursors
 %{_datadir}/icons/breeze-dark
@@ -51,5 +52,5 @@ DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
 %{_datadir}/QtCurve
 %{_datadir}/color-schemes/Breeze.colors
 %{_datadir}/color-schemes/BreezeDark.colors
-%{_libdir}/plugins/kstyle_breeze_config.so
-%{_libdir}/plugins/styles/breeze.so
+%{_libdir}/qt5/plugins/kstyle_breeze_config.so
+%{_libdir}/qt5/plugins/styles/breeze.so
