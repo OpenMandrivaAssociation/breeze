@@ -3,7 +3,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: breeze
-Version: 5.2.1
+Version: 5.2.2
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
@@ -14,20 +14,24 @@ BuildRequires: cmake
 BuildRequires: qmake5
 BuildRequires: extra-cmake-modules5
 BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: pkgconfig(Qt5DBus)
+BuildRequires: pkgconfig(Qt5Gui)
+BuildRequires: pkgconfig(Qt5Widgets)
+BuildRequires: pkgconfig(Qt5X11Extras)
+BuildRequires: pkgconfig(xcb)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(Gettext)
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KDecoration2)
 BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: cmake(KF5Service)
-#BuildRequires: cmake(KDecorations)
+BuildRequires: cmake(KDecorations)
 BuildRequires: cmake(KF5ConfigWidgets)
 BuildRequires: cmake(KF5FrameworkIntegration)
-BuildRequires: cmake(Qt5)
 BuildRequires: ninja
 
 %description
-The KDE 5 Breeze style
+The KDE 5 Breeze style.
 
 %prep
 %setup -q
