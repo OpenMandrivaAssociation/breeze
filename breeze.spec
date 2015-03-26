@@ -25,7 +25,6 @@ BuildRequires: cmake(ECM)
 BuildRequires: cmake(KDecoration2)
 BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: cmake(KF5Service)
-BuildRequires: cmake(KDecorations)
 BuildRequires: cmake(KF5ConfigWidgets)
 BuildRequires: cmake(KF5FrameworkIntegration)
 BuildRequires: ninja
