@@ -10,9 +10,6 @@ Summary: The KDE 5 Breeze style
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
-BuildRequires: cmake
-BuildRequires: qmake5
-BuildRequires: extra-cmake-modules5
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5DBus)
 BuildRequires: pkgconfig(Qt5Gui)
@@ -27,21 +24,21 @@ BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: cmake(KF5Service)
 BuildRequires: cmake(KF5ConfigWidgets)
 BuildRequires: cmake(KF5FrameworkIntegration)
-BuildRequires: ninja
+BuildRequires: cmake(KF5KCMUtils)
 
 %description
 The KDE 5 Breeze style.
 
 %prep
 %setup -q
-%cmake -G Ninja \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%cmake_kde5
 
 %build
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install
+%ninja_install -C build
+
 %find_lang breeze_style_config
 %find_lang breeze_kwin_deco
 cat  *.lang >all.lang
@@ -65,3 +62,5 @@ cat  *.lang >all.lang
 %{_libdir}/qt5/plugins/kstyle_breeze_config.so
 %{_libdir}/qt5/plugins/styles/breeze.so
 %{_libdir}/qt5/plugins/org.kde.kdecoration2/*.so
+%{_datadir}/kservices5/*.desktop
+
