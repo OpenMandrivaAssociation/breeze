@@ -5,7 +5,7 @@
 Name: breeze
 Version: 5.3.0
 Release: 1
-Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
+Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
 URL: http://kde.org/
 License: GPL
@@ -63,4 +63,4 @@ cat  *.lang >all.lang
 %{_libdir}/qt5/plugins/styles/breeze.so
 %{_libdir}/qt5/plugins/org.kde.kdecoration2/*.so
 %{_datadir}/kservices5/*.desktop
-
+%{_iconsdir}/hicolor/scalable/apps/breeze-settings.svgz
