@@ -31,7 +31,7 @@ The KDE 5 Breeze style.
 
 %prep
 %setup -q
-%cmake_kde5
+%cmake_kde5 -DUSE_KDE4=false
 
 %build
 %ninja -C build
