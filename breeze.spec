@@ -57,6 +57,7 @@ cat  *.lang >all.lang
 %{_datadir}/QtCurve
 %{_datadir}/color-schemes/Breeze.colors
 %{_datadir}/color-schemes/BreezeDark.colors
+%{_datadir}/color-schemes/BreezeHighContrast.colors
 %{_datadir}/kconf_update/gtkbreeze.upd
 %{_libdir}/kconf_update_bin/gtkbreeze
 %{_libdir}/qt5/plugins/kstyle_breeze_config.so
