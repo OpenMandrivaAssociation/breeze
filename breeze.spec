@@ -4,7 +4,7 @@
 
 Name: breeze
 Version: 5.4.1
-Release: 2
+Release: 3
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
 URL: http://kde.org/
@@ -25,6 +25,7 @@ BuildRequires: cmake(KF5Service)
 BuildRequires: cmake(KF5ConfigWidgets)
 BuildRequires: cmake(KF5FrameworkIntegration)
 BuildRequires: cmake(KF5KCMUtils)
+Provides: kde4-icon-theme
 
 %description
 The KDE 5 Breeze style.
