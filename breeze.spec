@@ -49,9 +49,10 @@ cat  *.lang >all.lang
 %{_bindir}/breeze-settings5
 %{_libdir}/kconf_update_bin/kde4breeze
 %{_libdir}/qt5/qml/QtQuick/Controls/Styles/Breeze
-%{_datadir}/icons/breeze
+%{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/contents/defaults
+%{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/preview.png
+%{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/metadata.desktop
 %{_datadir}/icons/breeze_cursors
-%{_datadir}/icons/breeze-dark
 %{_datadir}/icons/Breeze_Snow
 %{_datadir}/wallpapers
 %{_datadir}/kstyle/themes/breeze.themerc
@@ -60,8 +61,6 @@ cat  *.lang >all.lang
 %{_datadir}/color-schemes/Breeze.colors
 %{_datadir}/color-schemes/BreezeDark.colors
 %{_datadir}/color-schemes/BreezeHighContrast.colors
-%{_datadir}/kconf_update/gtkbreeze.upd
-%{_libdir}/kconf_update_bin/gtkbreeze
 %{_libdir}/qt5/plugins/kstyle_breeze_config.so
 %{_libdir}/qt5/plugins/styles/breeze.so
 %{_libdir}/qt5/plugins/org.kde.kdecoration2/*.so
