@@ -25,6 +25,7 @@ BuildRequires: cmake(KF5Service)
 BuildRequires: cmake(KF5ConfigWidgets)
 BuildRequires: cmake(KF5FrameworkIntegration)
 BuildRequires: cmake(KF5KCMUtils)
+BuildRequires: cmake(KF5Plasma)
 Provides: kde4-icon-theme
 
 %description
