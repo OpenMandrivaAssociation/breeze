@@ -102,4 +102,6 @@ cat  *.lang >all.lang
 %if %{with kde4}
 %files kde4
 %{_libdir}/kde4/plugins/styles/breeze.so
+%{_libdir}/kde4/kstyle_breeze_config.so
+%{_datadir}/apps/kstyle/themes/breeze.themer
 %endif
