@@ -2,14 +2,16 @@
 %define major %(echo %{version} |cut -d. -f1-3)
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
+%bcond_without kde4
+
 Name: breeze
 Version: 5.5.3
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
 URL: http://kde.org/
 License: GPL
-Group: System/Libraries
+Group: Graphical desktop/KDE
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5DBus)
 BuildRequires: pkgconfig(Qt5Gui)
@@ -31,14 +33,42 @@ Provides: kde4-icon-theme
 %description
 The KDE 5 Breeze style.
 
+%if %{with kde4}
+%package kde4
+Summary:	The KDE 4 Breeze style
+Group:		Graphical desktop/KDE
+
+%description kde4
+The KDE 4 Breeze style.
+%endif
+
 %prep
 %setup -q
-%cmake_kde5 -DUSE_KDE4=false
 
 %build
-%ninja -C build
+%cmake_kde5 -DUSE_KDE4=OFF
+%ninja
+
+
+%if %{with kde4}
+cd ..
+mkdir build-kde4
+pushd build-kde4
+%cmake_kde4 ../.. \
+    -DUSE_KDE4=ON \
+    -DBUILD_TESTING:BOOL=OFF
+
+%make
+
+%endif
 
 %install
+%if %{with kde4}
+pushd build-kde4
+%makeinstall_std -C build
+popd
+%endif
+
 %ninja_install -C build
 
 %find_lang breeze_style_config
@@ -66,3 +96,8 @@ cat  *.lang >all.lang
 %{_libdir}/qt5/plugins/org.kde.kdecoration2/*.so
 %{_datadir}/kservices5/*.desktop
 %{_iconsdir}/hicolor/scalable/apps/breeze-settings.svgz
+
+%if %{with kde4}
+%files kde4
+%{_libdir}/kde4/plugins/styles/breeze.so
+%endif
