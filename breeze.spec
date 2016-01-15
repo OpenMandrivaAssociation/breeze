@@ -37,6 +37,8 @@ The KDE 5 Breeze style.
 %package kde4
 Summary:	The KDE 4 Breeze style
 Group:		Graphical desktop/KDE
+BuildRequires:	kdelibs-devel
+Requires:	kdelibs4-core
 
 %description kde4
 The KDE 4 Breeze style.
