@@ -6,7 +6,7 @@
 
 Name: breeze
 Version: 5.5.3
-Release: 2
+Release: 3
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
 URL: http://kde.org/
@@ -28,7 +28,6 @@ BuildRequires: cmake(KF5ConfigWidgets)
 BuildRequires: cmake(KF5FrameworkIntegration)
 BuildRequires: cmake(KF5KCMUtils)
 BuildRequires: cmake(KF5Plasma)
-Provides: kde4-icon-theme
 
 %description
 The KDE 5 Breeze style.
@@ -37,6 +36,7 @@ The KDE 5 Breeze style.
 %package kde4
 Summary:	The KDE 4 Breeze style
 Group:		Graphical desktop/KDE
+Requires:	%{name} = %{EVRD}
 BuildRequires:	kdelibs-devel
 Requires:	kdelibs4-core
 
@@ -68,6 +68,8 @@ pushd build-kde4
 %if %{with kde4}
 pushd build-kde4
 %makeinstall_std -C build
+mkdir -p %{buildroot}%{_qt_plugindir}/styles/
+ln -s %{_kde_libdir}/kde4/plugins/styles/breeze.so %{buildroot}%{_qt_plugindir}/styles/breeze.so
 popd
 %endif
 
@@ -104,4 +106,5 @@ cat  *.lang >all.lang
 %{_libdir}/kde4/plugins/styles/breeze.so
 %{_libdir}/kde4/kstyle_breeze_config.so
 %{_datadir}/apps/kstyle/themes/breeze.themerc
+%{_qt_plugindir}/styles/breeze.so
 %endif
