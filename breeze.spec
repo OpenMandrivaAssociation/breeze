@@ -5,7 +5,7 @@
 %bcond_without kde4
 
 Name: breeze
-Version: 5.6.5
+Version: 5.7.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
@@ -75,8 +75,8 @@ popd
 
 %ninja_install -C build
 
-%find_lang breeze_style_config
-%find_lang breeze_kwin_deco
+%find_lang breeze_style_config || touch breeze_style_config.lang
+%find_lang breeze_kwin_deco || touch breeze_kwin_deco.lang
 cat  *.lang >all.lang
 
 %files -f all.lang
@@ -100,6 +100,7 @@ cat  *.lang >all.lang
 %{_libdir}/qt5/plugins/org.kde.kdecoration2/*.so
 %{_datadir}/kservices5/*.desktop
 %{_iconsdir}/hicolor/scalable/apps/breeze-settings.svgz
+%{_libdir}/cmake/Breeze
 
 %if %{with kde4}
 %files kde4
