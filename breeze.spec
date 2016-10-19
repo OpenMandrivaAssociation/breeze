@@ -18,7 +18,6 @@ BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5X11Extras)
 BuildRequires: pkgconfig(xcb)
-BuildRequires: appstream
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(Gettext)
 BuildRequires: cmake(ECM)
@@ -88,7 +87,6 @@ cat  *.lang >all.lang
 %{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/contents/defaults
 %{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/preview.png
 %{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/metadata.desktop
-%{_datadir}/metainfo/org.kde.breezedark.desktop.appdata.xml
 %{_datadir}/icons/breeze_cursors
 %{_datadir}/icons/Breeze_Snow
 %{_datadir}/wallpapers
