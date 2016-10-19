@@ -18,7 +18,7 @@ BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5X11Extras)
 BuildRequires: pkgconfig(xcb)
-BuildRequires: pkgconfig(appstream)
+BuildRequires: appstream
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(Gettext)
 BuildRequires: cmake(ECM)
