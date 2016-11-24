@@ -84,7 +84,6 @@ cat  *.lang >all.lang
 %{_bindir}/breeze-settings5
 %{_libdir}/kconf_update_bin/kde4breeze
 %{_libdir}/qt5/qml/QtQuick/Controls/Styles/Breeze
-%{_datadir}/metainfo/org.kde.breezedark.desktop.appdata.xml
 %{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/contents/defaults
 %{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/preview.png
 %{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/metadata.*
