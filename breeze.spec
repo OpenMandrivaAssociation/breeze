@@ -90,6 +90,7 @@ cat  *.lang >all.lang
 %{_datadir}/icons/breeze_cursors
 %{_datadir}/icons/Breeze_Snow
 %{_datadir}/wallpapers
+%{_datadir}/metainfo/*.xml
 %{_datadir}/kstyle/themes/breeze.themerc
 %{_datadir}/kconf_update/kde4breeze.upd
 %{_datadir}/QtCurve
