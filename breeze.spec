@@ -29,6 +29,7 @@ BuildRequires: cmake(KF5FrameworkIntegration)
 BuildRequires: cmake(KF5KCMUtils)
 BuildRequires: cmake(KF5Plasma)
 BuildRequires: cmake(KF5Wayland)
+BuildRequires: plasma-lookandfeelexplorer
 
 %description
 The KDE 5 Breeze style.
