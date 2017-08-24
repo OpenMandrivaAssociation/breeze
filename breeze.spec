@@ -5,7 +5,7 @@
 %bcond_without kde4
 
 Name: breeze
-Version: 5.10.4
+Version: 5.10.5
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
