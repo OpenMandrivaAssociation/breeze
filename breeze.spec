@@ -2,10 +2,10 @@
 %define major %(echo %{version} |cut -d. -f1-3)
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
-%bcond_without kde4
+%bcond_with kde4
 
 Name: breeze
-Version: 5.12.3
+Version: 5.12.90
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
@@ -98,6 +98,7 @@ cat  *.lang >all.lang
 %{_datadir}/color-schemes/Breeze.colors
 %{_datadir}/color-schemes/BreezeDark.colors
 %{_datadir}/color-schemes/BreezeHighContrast.colors
+%{_datadir}/color-schemes/BreezeLight.colors
 %{_libdir}/qt5/plugins/kstyle_breeze_config.so
 %{_libdir}/qt5/plugins/styles/breeze.so
 %{_libdir}/qt5/plugins/org.kde.kdecoration2/*.so
