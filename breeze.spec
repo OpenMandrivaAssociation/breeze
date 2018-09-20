@@ -6,7 +6,7 @@
 
 Name: breeze
 Version: 5.13.90
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
 URL: http://kde.org/
@@ -34,13 +34,24 @@ BuildRequires: plasma-lookandfeelexplorer
 %description
 The KDE 5 Breeze style.
 
+%package devel
+Summary: Devel stuff for %{name}
+Group: Development/KDE and Qt
+Requires: %{name} = %{EVRD}
+Provides: %{name}-devel = %{EVRD}
+
+%description devel
+This package contains header files needed if you wish to build applications
+based on %{name}.
+
+
 %if %{with kde4}
 %package kde4
-Summary:	The KDE 4 Breeze style
-Group:		Graphical desktop/KDE
-Requires:	%{name} = %{EVRD}
-BuildRequires:	kdelibs-devel
-Requires:	kdelibs4-core
+Summary: The KDE 4 Breeze style
+Group: Graphical desktop/KDE
+Requires: %{name} = %{EVRD}
+BuildRequires: kdelibs-devel
+Requires: kdelibs4-core
 
 %description kde4
 The KDE 4 Breeze style.
@@ -105,6 +116,8 @@ cat  *.lang >all.lang
 %{_libdir}/qt5/plugins/org.kde.kdecoration2/*.so
 %{_datadir}/kservices5/*.desktop
 %{_iconsdir}/hicolor/scalable/apps/breeze-settings.svgz
+
+%files devel
 %{_libdir}/cmake/Breeze
 
 %if %{with kde4}
