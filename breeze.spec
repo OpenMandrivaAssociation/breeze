@@ -6,7 +6,7 @@
 
 Name: breeze
 Version: 5.13.90
-Release: 2
+Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
 URL: http://kde.org/
@@ -30,6 +30,7 @@ BuildRequires: cmake(KF5KCMUtils)
 BuildRequires: cmake(KF5Plasma)
 BuildRequires: cmake(KF5Wayland)
 BuildRequires: plasma-lookandfeelexplorer
+BuildRequires: pkgconfig(fftw3)
 
 %description
 The KDE 5 Breeze style.
