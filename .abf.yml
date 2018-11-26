@@ -1,4 +1,5 @@
 removed_sources:
   breeze-5.12.3.tar.xz: 6270621d001d6345d7a0072094df34ec9e28f193
-sources:
   breeze-5.12.6.tar.xz: 9ba1fc6b40e9252e0dc1e1c9b1e2ea97c4711bdb
+sources:
+  breeze-5.12.7.tar.xz: 30b45fb9952a97b78244feafa3251fa107e28a7f
