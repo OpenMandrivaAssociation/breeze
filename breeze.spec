@@ -5,7 +5,7 @@
 %bcond_with kde4
 
 Name: breeze
-Version:	5.16.5
+Version:	5.16.90
 Release:	1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
@@ -96,7 +96,6 @@ cat  *.lang >all.lang
 %files -f all.lang
 %{_bindir}/breeze-settings5
 %{_libdir}/kconf_update_bin/kde4breeze
-%{_libdir}/qt5/qml/QtQuick/Controls/Styles/Breeze
 %{_libdir}/libbreezecommon5.so*
 %{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/contents/defaults
 %{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/preview.png
