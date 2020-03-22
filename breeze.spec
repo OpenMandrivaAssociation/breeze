@@ -8,6 +8,7 @@ Name: breeze
 Version:	5.18.3
 Release:	2
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
+Patch0:	breeze-5.18.3-qt-5.15.patch
 Summary: The KDE 5 Breeze style
 URL: http://kde.org/
 License: GPL
@@ -59,7 +60,7 @@ The KDE 4 Breeze style.
 %endif
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %cmake_kde5 -DUSE_KDE4=OFF
