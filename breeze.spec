@@ -2,10 +2,8 @@
 %define major %(echo %{version} |cut -d. -f1-3)
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
-%bcond_with kde4
-
 Name: breeze
-Version:	5.20.5
+Version:	5.21.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
@@ -45,19 +43,6 @@ Provides: %{name}-devel = %{EVRD}
 This package contains header files needed if you wish to build applications
 based on %{name}.
 
-
-%if %{with kde4}
-%package kde4
-Summary: The KDE 4 Breeze style
-Group: Graphical desktop/KDE
-Requires: %{name} = %{EVRD}
-BuildRequires: kdelibs-devel
-Requires: kdelibs4-core
-
-%description kde4
-The KDE 4 Breeze style.
-%endif
-
 %prep
 %autosetup -p1
 
@@ -65,28 +50,7 @@ The KDE 4 Breeze style.
 %cmake_kde5 -DUSE_KDE4=OFF
 %ninja
 
-
-%if %{with kde4}
-cd ..
-mkdir build-kde4
-pushd build-kde4
-%cmake_kde4 ../.. \
-    -DUSE_KDE4=ON \
-    -DBUILD_TESTING:BOOL=OFF
-
-%make
-
-%endif
-
 %install
-%if %{with kde4}
-pushd build-kde4
-%makeinstall_std -C build
-mkdir -p %{buildroot}%{_qt_plugindir}/styles/
-ln -s %{_kde_libdir}/kde4/plugins/styles/breeze.so %{buildroot}%{_qt_plugindir}/styles/breeze.so
-popd
-%endif
-
 %ninja_install -C build
 
 %find_lang breeze_style_config || touch breeze_style_config.lang
@@ -101,12 +65,15 @@ cat  *.lang >all.lang
 %{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/preview.png
 %{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/fullscreenpreview.jpg
 %{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/metadata.*
+%{_datadir}/kconf_update/breezetobreezelight.upd
+%{_datadir}/plasma/look-and-feel/org.kde.breezetwilight.desktop
 %{_datadir}/icons/breeze_cursors
 %{_datadir}/icons/Breeze_Snow
 %{_datadir}/wallpapers
 %optional %{_datadir}/metainfo/*.xml
 %{_datadir}/kstyle/themes/breeze.themerc
 %{_datadir}/kconf_update/kde4breeze.upd
+%{_libdir}/kconf_update_bin/breezetobreezelight
 %{_datadir}/QtCurve
 %{_datadir}/color-schemes/Breeze.colors
 %{_datadir}/color-schemes/BreezeDark.colors
@@ -120,11 +87,3 @@ cat  *.lang >all.lang
 
 %files devel
 %{_libdir}/cmake/Breeze
-
-%if %{with kde4}
-%files kde4
-%{_libdir}/kde4/plugins/styles/breeze.so
-%{_libdir}/kde4/kstyle_breeze_config.so
-%{_datadir}/apps/kstyle/themes/breeze.themerc
-%{_qt_plugindir}/styles/breeze.so
-%endif
