@@ -2,7 +2,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: breeze
-Version:	5.22.5
+Version:	5.22.90
 Release:	1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
@@ -60,16 +60,10 @@ cat  *.lang >all.lang
 %{_bindir}/breeze-settings5
 %{_libdir}/kconf_update_bin/kde4breeze
 %{_libdir}/libbreezecommon5.so*
-%{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/contents/defaults
-%{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/preview.png
-%{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/fullscreenpreview.jpg
-%{_datadir}/plasma/look-and-feel/org.kde.breezedark.desktop/metadata.*
 %{_datadir}/kconf_update/breezetobreezelight.upd
-%{_datadir}/plasma/look-and-feel/org.kde.breezetwilight.desktop
 %{_datadir}/icons/breeze_cursors
 %{_datadir}/icons/Breeze_Snow
 %{_datadir}/wallpapers
-%optional %{_datadir}/metainfo/*.xml
 %{_datadir}/kstyle/themes/breeze.themerc
 %{_datadir}/kconf_update/kde4breeze.upd
 %{_libdir}/kconf_update_bin/breezetobreezelight
