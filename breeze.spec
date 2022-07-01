@@ -63,7 +63,7 @@ cat  *.lang >all.lang
 %{_datadir}/kconf_update/breezetobreezelight.upd
 %{_datadir}/icons/breeze_cursors
 %{_datadir}/icons/Breeze_Snow
-%{_datadir}/wallpapers
+%{_datadir}/wallpapers/*
 %{_datadir}/kstyle/themes/breeze.themerc
 %{_libdir}/kconf_update_bin/breezetobreezelight
 %{_datadir}/QtCurve
