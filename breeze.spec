@@ -3,7 +3,7 @@
 
 Name: breeze
 Version:	5.26.2
-Release:	1
+Release:	2
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
 URL: http://kde.org/
