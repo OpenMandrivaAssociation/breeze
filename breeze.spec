@@ -5,6 +5,7 @@ Name: breeze
 Version:	5.26.3
 Release:	1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
+Patch0: breeze-5.26.3-fix-version.patch
 Summary: The KDE 5 Breeze style
 URL: http://kde.org/
 License: GPL
