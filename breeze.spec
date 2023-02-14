@@ -2,7 +2,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: breeze
-Version:	5.26.5
+Version:	5.27.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Summary: The KDE 5 Breeze style
@@ -69,16 +69,18 @@ cat  *.lang >all.lang
 %{_datadir}/QtCurve
 %{_datadir}/color-schemes/BreezeDark.colors
 %{_datadir}/color-schemes/BreezeLight.colors
-%{_libdir}/qt5/plugins/kstyle_breeze_config.so
 %{_libdir}/qt5/plugins/styles/breeze.so
 %{_libdir}/qt5/plugins/org.kde.kdecoration2/*.so
-%{_datadir}/kservices5/*.desktop
 %{_iconsdir}/hicolor/scalable/apps/breeze-settings.svgz
 %{_libdir}/kconf_update_bin/breezehighcontrasttobreezedark
 %{_libdir}/kconf_update_bin/breezetobreezeclassic
 %{_datadir}/color-schemes/BreezeClassic.colors
 %{_datadir}/kconf_update/breezehighcontrasttobreezedark.upd
 %{_datadir}/kconf_update/breezetobreezeclassic.upd
+%{_libdir}/qt5/plugins/plasma/kcms/breeze/kcm_breezedecoration.so
+%{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/breezestyleconfig.so
+%{_datadir}/applications/breezestyleconfig.desktop
+%{_datadir}/applications/kcm_breezedecoration.desktop
 
 %files devel
 %{_libdir}/cmake/Breeze
