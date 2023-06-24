@@ -18,7 +18,7 @@ BuildRequires: pkgconfig(xcb)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(Gettext)
 BuildRequires: cmake(ECM)
-BuildRequires: cmake(KDecoration2)
+BuildRequires: cmake(KDecoration2) < 5.27.50
 BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: cmake(KF5Service)
 BuildRequires: cmake(KF5ConfigWidgets)
