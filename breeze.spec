@@ -76,6 +76,8 @@ Summary: Devel stuff for %{name}
 Group: Development/KDE and Qt
 Requires: %{name} = %{EVRD}
 Provides: %{name}-devel = %{EVRD}
+# Renamed 2025-05-01 after 6.0
+%rename plasma6-breeze-devel
 
 %description devel
 This package contains header files needed if you wish to build applications
