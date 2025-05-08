@@ -7,8 +7,8 @@
 %bcond_without qt5
 
 Name: breeze
-Version:	6.3.4
-Release:	%{?git:0.%{git}.}4
+Version:	6.3.5
+Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/breeze/-/archive/%{gitbranch}/breeze-%{gitbranchd}.tar.bz2#/breeze-%{git}.tar.bz2
 %else
@@ -59,7 +59,6 @@ BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 %rename plasma6-breeze
 
 %patchlist
-breeze-6.3.3-qt-6.9.patch
 
 %description
 The KDE 6 Breeze style.
