@@ -7,8 +7,8 @@
 %bcond_without qt5
 
 Name: breeze
-Version:	6.4.4
-Release:	%{?git:0.%{git}.}2
+Version:	6.4.5
+Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/breeze/-/archive/%{gitbranch}/breeze-%{gitbranchd}.tar.bz2#/breeze-%{git}.tar.bz2
 %else
