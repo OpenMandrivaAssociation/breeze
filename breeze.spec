@@ -94,6 +94,8 @@ based on %{name}.
 %{_datadir}/icons/Breeze_Light
 %{_datadir}/wallpapers/*
 %{_datadir}/kstyle/themes/breeze.themerc
+%{_datadir}/config.kcfg/breeze.kcfg
+%{_datadir}/config.kcfg/breeze-decoration.kcfg
 %{_datadir}/QtCurve
 %{_datadir}/color-schemes/BreezeDark.colors
 %{_datadir}/color-schemes/BreezeLight.colors
